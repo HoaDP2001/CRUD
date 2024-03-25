@@ -12,6 +12,10 @@ export class StudentService {
     return this._http.post('http://localhost:3000/students', data);
   }
 
+  updateStudent(id: any, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/students/${id}`, data);
+  }
+
   getStudentList(): Observable<any> {
     return this._http.get('http://localhost:3000/students');
   }

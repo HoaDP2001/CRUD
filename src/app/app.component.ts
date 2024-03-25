@@ -5,6 +5,7 @@ import { StudentService } from './services/student.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CoreService } from './core/core.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,7 +32,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private _dialog: MatDialog,
-    private _studentService: StudentService
+    private _studentService: StudentService,
+    private _coreService: CoreService
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +41,16 @@ export class AppComponent implements OnInit {
   }
 
   openAddEditStuForm() {
-    this._dialog.open(StuAddEditComponent);
+    const dialogRef = this._dialog.open(StuAddEditComponent);
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) this.getStudentList();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   getStudentList() {
@@ -67,8 +78,21 @@ export class AppComponent implements OnInit {
   deleteStudent(id: any) {
     this._studentService.deleteStudent(id).subscribe({
       next: (res) => {
-        alert('Student deleted!');
         this.getStudentList();
+        this._coreService.openSnackBar('Student deleted!', 'Done');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  openEditStuForm(data: any) {
+    const dialogRef = this._dialog.open(StuAddEditComponent, { data });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) this.getStudentList();
       },
       error: (err) => {
         console.log(err);

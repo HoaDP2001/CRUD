@@ -13,28 +13,16 @@
       "package": 12
     },
     {
-      "id": "a144",
       "firstName": "Le Tuan",
-      "lastName": "Anh",
+      "lastName": "Anhhhhh",
       "email": "letuananh@gmail.com",
       "dob": "2024-03-04T17:00:00.000Z",
       "gender": "male",
-      "education": "Intermediate",
-      "address": "Thuong Tin",
+      "education": "Post Gratuate",
+      "address": "Thuong Tinnnn",
       "experience": 34,
-      "package": 23
-    },
-    {
-      "id": "26f4",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "dob": "",
-      "gender": "",
-      "education": "",
-      "address": "",
-      "experience": "",
-      "package": ""
+      "package": 23,
+      "id": "a144"
     }
   ]
 }
