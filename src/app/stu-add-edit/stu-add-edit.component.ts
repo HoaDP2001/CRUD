@@ -32,7 +32,7 @@ export class StuAddEditComponent {
 
   onFormSubmit() {
     if (this.stuForm.valid) {
-      console.log(this.stuForm);
+      console.log(this.stuForm.value);
     }
   }
 }

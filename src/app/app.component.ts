@@ -8,7 +8,7 @@ import { StuAddEditComponent } from './stu-add-edit/stu-add-edit.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'crudAngular';
+  title = 'CRUD Angular';
 
   constructor(private _dialog: MatDialog) {}
 
