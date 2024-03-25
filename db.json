@@ -1,14 +1,40 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "students": []
+  "students": [
+    {
+      "id": "4c60",
+      "firstName": "Hòa",
+      "lastName": "Đỗ",
+      "email": "stupiddogg2k1@gmail.com",
+      "dob": "2024-03-11T17:00:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "address": "Thanh Trì",
+      "experience": 12,
+      "package": 12
+    },
+    {
+      "id": "a144",
+      "firstName": "Le Tuan",
+      "lastName": "Anh",
+      "email": "letuananh@gmail.com",
+      "dob": "2024-03-04T17:00:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "address": "Thuong Tin",
+      "experience": 34,
+      "package": 23
+    },
+    {
+      "id": "26f4",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "dob": "",
+      "gender": "",
+      "education": "",
+      "address": "",
+      "experience": "",
+      "package": ""
+    }
+  ]
 }

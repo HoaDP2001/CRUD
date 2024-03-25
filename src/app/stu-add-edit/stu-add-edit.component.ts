@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { StudentService } from '../services/student.service';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-stu-add-edit',
@@ -16,7 +18,11 @@ export class StuAddEditComponent {
     ' Post Gratuate',
   ];
 
-  constructor(private _fb: FormBuilder) {
+  constructor(
+    private _fb: FormBuilder,
+    private _stuService: StudentService,
+    private _dialogRef: DialogRef<StuAddEditComponent>
+  ) {
     this.stuForm = this._fb.group({
       firstName: '',
       lastName: '',
@@ -32,7 +38,15 @@ export class StuAddEditComponent {
 
   onFormSubmit() {
     if (this.stuForm.valid) {
-      console.log(this.stuForm.value);
+      this._stuService.addStudent(this.stuForm.value).subscribe({
+        next: (val: any) => {
+          alert('Student added successfully!');
+          this._dialogRef.close();
+        },
+        error: (error: any) => {
+          console.log(error);
+        },
+      });
     }
   }
 }
